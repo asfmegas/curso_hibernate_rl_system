@@ -22,13 +22,13 @@
 				DependenciaDAO depDoa = new DependenciaDAO();	
 			
 				FilmeDAO dao = new FilmeDAO();
-				for(Filme filme : dao.getListaFilmes2()){
+				for(Filme filme : dao.getListaFilmes()){
 			%>
 				<tr>
 					<td><%=filme.getId() %></td>
 					<td><%=filme.getOriginalTitle() %></td>
 					<td><%=filme.getPtTitle() %></td>
-					<td><%= depDoa.getById(filme.getDep().getId()).getDeclaration() %></td>
+					<td><%=depDoa.getById(filme.getDep().getId()).getDeclaration() %></td>
 				</tr>
 			<%
 				}
@@ -36,6 +36,6 @@
 		</table>
 		<br />
 		<br />
-		<a href="cadastro.jsp" >Novo Cadastro</a>
+		<a href="cadastro.jsp">Novo Cadastro</a>
 	</body>
 </html>
